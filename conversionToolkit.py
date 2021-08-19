@@ -2,25 +2,25 @@
 
 from modules import hex2dec
 from modules import hex2ascii
-from resources import colors
+from resources import colors, menus
 
 def switchCase(*args):
 
     switcher = {
-        "help": print("Help Menu"), # lambda: menus.helpMenu("mainhelp"),
+        "help": lambda: print("Help Menu"),
         "hex2ascii": lambda: hex2ascii.convert(),
         "hex2dec": lambda: hex2dec.convert()
     }
 
     try:
         func = switcher.get(args[0], lambda: print(f"{colors.red}{colors.bad}Invalid Input."))
-        # func()
+        func()
     except IndexError:
         print(f"""{colors.red}{colors.bad}Invalid number of arguments.
         Try 'help'""")
 
 def main():
-    command = input(f"{colors.yellow}ConversionTools >> {colors.end}")
+    command = input(menus.mainPrompt)
     commandOptions = command.split(" ")
     if len(commandOptions) > 1:
         commandBase = commandOptions[0]
