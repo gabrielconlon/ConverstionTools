@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-from modules import hex2dec
-from modules import hex2ascii
+from modules.conversionTools import hex2dec, hex2ascii
 from resources import colors, menus
 
 def switchCase(*args):
