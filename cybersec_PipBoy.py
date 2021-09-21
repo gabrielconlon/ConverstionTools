@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from modules.conversionTools import hex2dec, hex2ascii
+from modules.netTools import binaryConversion
 from resources import colors, menus
 
 def switchCase(*args):
@@ -8,7 +9,9 @@ def switchCase(*args):
     switcher = {
         "help": lambda: print("Help Menu"),
         "hex2ascii": lambda: hex2ascii.convert(),
-        "hex2dec": lambda: hex2dec.convert()
+        "hex2dec": lambda: hex2dec.convert(),
+        "bin2dec": lambda: binaryConversion.convert_binary2decimal(),
+        "dec2bin": lambda: binaryConversion.convertIP_toBinary()
     }
 
     try:
